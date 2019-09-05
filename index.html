@@ -15,12 +15,14 @@
     function MyComponent() {
       return (
         <div>
-          <h1>Witaj, świecie!</h1>
-          <h2>Zaraz wleci pierwszy komponent</h2>
+          <dialog open>
+            <h1>Title</h1>
+            <p>Content</p>
+          </dialog>
         </div>
       );
     }
-    
+
     ReactDOM.render(
       <MyComponent/>,
       document.getElementById('app')
