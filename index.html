@@ -12,19 +12,22 @@
 <body>
   <div id="app"></div>
   <script type="text/babel">
-    function MyComponent() {
+    function MyComponent({title, content}) {
       return (
         <div>
           <dialog open>
-            <h1>Title</h1>
-            <p>Content</p>
+            <h1>{title}</h1>
+            <p>{content}</p>
           </dialog>
         </div>
       );
     }
 
     ReactDOM.render(
-      <MyComponent/>,
+      <MyComponent 
+        title="Title" 
+        content="Content"
+      />,
       document.getElementById('app')
     );
   </script>
