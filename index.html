@@ -74,22 +74,20 @@
       }
     }
 
-
-
     class App extends React.Component {
       render () {
-        function OnClickHandler () {
-          alert('Kliknięto')
-        }
-        
+
         return (
           <div>
             <AppHeader />
             <ContactList />
             <main className="ui main text container"></main>
-            <button onClick={OnClickHandler}>KLIKNIJ</button>
+            <button onClick={onClickHandler}>KLIKNIJ</button>
           </div>
         );
+        function onClickHandler() {
+        alert('Kliknięto');
+        }
       }
     }
 
