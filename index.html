@@ -75,8 +75,13 @@
     }
 
     class App extends React.Component {
-      render () {
 
+      constructor() {
+        super ();
+        this.state = {counter: 0};
+      }
+
+      render () {
         return (
           <div>
             <AppHeader />
@@ -84,7 +89,7 @@
             <main className="ui main text container"></main>
             <div>
               <button>PLUS</button>
-              <output>[this.state.counter}</output>  
+              <output>{this.state.counter}</output>  
               <button>MINUS</button>
             </div>
           </div>
