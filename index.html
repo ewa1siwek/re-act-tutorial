@@ -81,6 +81,12 @@
         this.state = {counter: 0};
       }
 
+      increment () {
+        this.setState({
+          counter: this.state.counter + 1
+        })
+      }
+
       render () {
         return (
           <div>
@@ -88,7 +94,7 @@
             <ContactList />
             <main className="ui main text container"></main>
             <div>
-              <button>PLUS</button>
+              <button onClick={this.increment.bind(this)}>PLUS</button>
               <output>{this.state.counter}</output>  
               <button>MINUS</button>
             </div>
