@@ -78,7 +78,9 @@
 
       constructor() {
         super ();
-        this.state = {counter: 0};
+        this.state = {
+          sumCount: 0
+          };
       }
 
       render () {
@@ -89,7 +91,7 @@
             <main className="ui main text container"></main>
             <div>
               <button onClick={this.increment.bind(this)}>PLUS</button>
-              <output>{this.state.counter}</output>  
+              <output>Suma: {this.state.sumCount}</output>  
               <button onClick={this.decrement.bind(this)}>MINUS</button>
             </div>
           </div>
@@ -98,13 +100,13 @@
 
       increment() {
         this.setState({
-          counter: this.state.counter + 1
+          sumCount: this.state.sumCount + 1
         })
       }
 
       decrement() {
         this.setState({
-          counter: this.state.counter - 1
+          sumCount: this.state.sumCount - 1
         })
       }
     }
