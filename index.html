@@ -101,9 +101,11 @@
       }
 
       increment() {
-        this.setState({
-          sumCount: this.state.sumCount + 1,
-          totalCount: this.state.totalCount + 1
+        this.setState(prevState => {
+          return {
+            sumCount: this.state.sumCount + 1,
+            totalCount: this.state.totalCount + 1
+          }
         })
       }
 
