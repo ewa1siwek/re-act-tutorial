@@ -80,7 +80,8 @@
         super ();
         this.state = {
           sumCount: 0,
-          totalCount: 0
+          totalCount: 0,
+          firstName: ""
           };
       }
 
@@ -95,10 +96,22 @@
               <output>Suma: {this.state.sumCount}</output>  
               <output>Kliknięcia: {this.state.totalCount}</output>  
               <button onClick={this.decrement.bind(this)}>MINUS</button>
+              <input value={this.state.firstName} onChange={this.first.bind(this)}></input>
+              <output>{this.state.firstName}</output>
             </div>
           </div>
         );
       }
+
+      first(e) {
+        this.setState({
+          firstName:e.target.value
+        })
+      }
+
+      setName(e){
+        this.setState({name: e.target.value})
+        }
 
       increment() {
         this.setState(prevState => {
