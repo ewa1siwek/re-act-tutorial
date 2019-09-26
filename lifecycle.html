@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+  <title>Lifecycle</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+
+    class MyNum extends React.Component {
+      render() {
+        return (
+          <div>
+            <output>{this.props.number}</output>
+            <div>
+              <button name="plus" onClick={this.props.handlePlus}>PLUS</button>
+              <button name="minus" onClick={this.props.handleMinus}>MINUS</button>
+            </div>
+          </div>
+        )
+      }
+    }
+
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+          this.state = {
+            number: 0
+        };
+      }
+
+      handleChange = (e) => {
+        const value = parseFloat(e.target.value);
+        if(Number.isNaN(value)){
+          return '';
+        }
+
+        this.setState({ number: value})
+      }
+
+      handlePlus = () => {
+        this.setState({ number: this.state.number + 1 })
+      }
+
+      handleMinus = () => {
+        this.setState({ number: this.state.number - 1 })
+      }
+
+      render () {
+        return (
+          <div>
+            <title>Podaj liczbę:</title>
+            <input type="number" value={this.state.value} onChange={this.handleChange}></input>
+            <MyNum
+              number={this.state.number}
+              handlePlus={this.handlePlus}
+              handleMinus={this.handleMinus}  
+            />
+          </div>
+        )
+      }
+    } 
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById("app")
+    )
+
+
+  </script>
+</body>
+</html>
