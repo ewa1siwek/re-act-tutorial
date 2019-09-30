@@ -38,7 +38,13 @@
         };
       }
 
-      
+      filterUsers(e) {
+        const text = e.currentTarget.value;
+        const filteredUsers = this.getFilteredUsersForText(text)
+        this.setState({
+          filteredUsers
+        });
+      }
 
       render() {
         return (
