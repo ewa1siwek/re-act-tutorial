@@ -16,10 +16,15 @@
     const allUsers = ['Ewa', 'Michał', 'Maciej', 'Aleksandra', 'Monika', 'Danuta', 'Tomasz', 'Józef', 'Jan'];
 
     const UserList = ({ users }) => {
-      return (
+      if (users.length > 0) {
+        return (
         <ul>
           {users.map(user => <li> key={user}>{user}</li>)}
         </ul>
+        )
+      }
+      return (
+        <p>No results!</p>
       )
     }
   </script>
