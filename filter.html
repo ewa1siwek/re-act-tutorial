@@ -13,7 +13,15 @@
   <div id="app"></div>
 
   <script type="text/babel">
-    
+    const allUsers = ['Ewa', 'Michał', 'Maciej', 'Aleksandra', 'Monika', 'Danuta', 'Tomasz', 'Józef', 'Jan'];
+
+    const UserList = ({ users }) => {
+      return (
+        <ul>
+          {users.map(user => <li> key={user}>{user}</li>)}
+        </ul>
+      )
+    }
   </script>
   
 </body>
