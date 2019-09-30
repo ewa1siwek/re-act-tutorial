@@ -23,10 +23,35 @@
         </ul>
         )
       }
+
       return (
         <p>No results!</p>
       )
     }
+
+    class App extends React.Component {
+      constructor() {
+        super();
+
+        this.state = {
+          filteredUsers: allUsers
+        };
+      }
+
+      
+
+      render() {
+        return (
+          <div>
+            <input type="text" onInput={this.filteredUsers.bind(this)} />
+            <UserList users={this.state.filteredUsers}/>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById("app"));
+
   </script>
   
 </body>
