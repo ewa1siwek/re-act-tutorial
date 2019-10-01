@@ -21,46 +21,46 @@
 
         this.state = {
           filteredUsers: allUsers
-        };
+        }
       }
 
       filterUsers(e) {
         const text = e.currentTarget.value;
         const filteredUsers = this.getFilteredUsersForText(text)
-        this.setState({
-          filteredUsers
-        })
+
+        this.setState({ filteredUsers })
       }
 
       getFilteredUsersForText(text) {
-        return allUsers.filter(user => user.toLowerCase().includes(text.toLowerCase()))
+        return allUsers.filter(user => user.toLowerCase.includes(text.toLowerCase()))
       }
 
-      render() {
+      render () {
+
         return (
           <div>
             <input onInput={this.filterUsers.bind(this)} />
-            <UsersList users={this.state.filteredUsers}/>
+            <UsersList users={this.state.filteredUsers} />
           </div>
         );
-      }
-    };
+      };
+    }
 
     const UsersList = ({ users }) => {
       if (users.length > 0) {
         return (
-        <ul>
-          {users.map(user => <li key={user}>{user}</li>)}
-        </ul>
+          <ul>
+            {users.map(user => <li key={user}>{user}</li>)}
+          </ul>
         );
       }
 
       return (
-        <p>No results!</p>
-      );
-    };
+        <p>No result</p>
+      )
+    }
 
-    ReactDOM.render(<App />, document.getElementById("app"));
+    ReactDOM.render(<App />, document.getElementById("app"))
 
   </script>
   
